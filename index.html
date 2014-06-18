@@ -7,10 +7,15 @@
 </head>
 <body>
 
+  <div>
+    Search for an item:
+    <input type="text" x-ng-model="search">
+  </div>
+
   <div x-ng-controller="TodoController">
     <div class="pending-todos">
       <h1>Get this done.</h1>
-      <div class="todos" x-ng-repeat="t in todos | filter: false">
+      <div class="todos" x-ng-repeat="t in todos | filter: false | filter: search">
         <h3>{{t.todoName}}</h3>
         <p>Complete? <input type="checkbox" x-ng-model="t.completed"></p>
       </div>
@@ -18,7 +23,7 @@
 
     <div class="completed-todos">
       <h1>Finished.</h1>
-      <div class="todos" x-ng-repeat="t in todos | filter: true">
+      <div class="todos" x-ng-repeat="t in todos | filter: true | filter: search">
         <h3>{{t.todoName}}</h3>
         <p>Complete? <input type="checkbox" x-ng-model="t.completed"></p>
       </div>
