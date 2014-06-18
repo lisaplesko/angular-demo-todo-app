@@ -1,0 +1,30 @@
+body {
+  text-align: center;
+  margin: 0 auto;
+  font-family: Arial;
+}
+
+h1 {
+  color: blue;
+}
+
+.todos  {
+  padding: 5px;
+  margin: 10px;
+  background: #e0e0e0;
+}
+
+/*.todos:nth-of-type(odd) {
+  background: #e0e0e0;
+}*/
+
+.pending-todos, .completed-todos {
+  background-color: rgba(0,0,0,0.2);
+  float: left;
+  width: 450px;
+  margin: 10px 25px;
+}
+
+.completed-todos > .todos h3 {
+  text-decoration: line-through;
+}
