@@ -26,5 +26,11 @@ todoApp.controller('TodoController', function ($scope) {
 			todoName: 'Feed my fish',
 			completed: false
 		}
-	]
+	];
+	$scope.addNew = function(name){
+		$scope.todos.push({
+			todoName: name,
+			completed: false
+		});
+	};
 });

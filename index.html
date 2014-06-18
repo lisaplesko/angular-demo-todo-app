@@ -7,12 +7,19 @@
 </head>
 <body>
 
-  <div>
-    Search for an item:
-    <input type="text" x-ng-model="search">
-  </div>
-
+<!-- Make sure everything is inside your controller -->
   <div x-ng-controller="TodoController">
+    <div>
+      Search for an item:
+      <input type="text" x-ng-model="search">
+    </div>
+
+    <div>
+      Add a new item:
+      <input type="text" x-ng-model="name">
+      <button ng-click="addNew(name)">Add</button>
+    </div>
+
     <div class="pending-todos">
       <h1>Get this done.</h1>
       <div class="todos" x-ng-repeat="t in todos | filter: false | filter: search">
